@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>问答访问</title>
+    <style>
+        body { font-family: sans-serif; max-width: 600px; margin: 40px auto; padding: 0 20px; line-height: 1.8; color: #333; }
+        #content { display: none; }
+        #quiz { margin-bottom: 20px; }
+        input { padding: 8px; font-size: 16px; }
+        button { padding: 8px 16px; font-size: 16px; cursor: pointer; }
+        #error { color: red; }
+    </style>
+</head>
+<body>
+    <div id="quiz">
+        <h2>请回答问题</h2>
+        <p>问题：who you are(姓名拼音首字母小写)？</p>
+        <input type="text" id="answer" placeholder="输入答案">
+        <button onclick="checkAnswer()">提交</button>
+        <p id="error"></p>
+    </div>
+
+    <div id="content">
+        <h1> </h1>
+        <pre>亲爱的张芮：
+     见字如晤，展信舒颜
+        很幸运可以在南工大认识你！今年我们也许没有机会一起去欣赏南京美丽的秋，也许没有机会一起走过金黄色的梧桐大道，但我们有机会一起完成那辆承载着梦想的小车，有机会在大学里向着各自的目标一同前进。
+        记得国庆回校的那个周末，我以比赛队友的身份第一次见到了你，那张脸庞给我留下了深深的印象。在交谈中，我逐渐看到了一个有趣的你，你总可以接住我说的话，在我焦虑时，你总可以抓住我的情绪，让我的内心逐渐平静。你就想一束光，在我毫无准备的时候照进了我的世界。
+
+        我的确有很多不完美的地方，有的时候情绪不够稳定，也没那么有心机，但是真的很感谢你一次次耐心的包容和引导。曾经的我太活在自己的想法里，以为事情会按我预想的方式发展，却忘了问你开不开心、愿不愿意，忽视了你的感受。也很感谢你给了我一次这样的机会。
+     很多时候，我很想见你，我会想念你，遇到好笑的事情，想分享给你，去图书馆看着身边那张空空的椅子，我会想，如果你在会多好，有的时候，两个人挨在一起，也许我们什么都不说什么都不做，我也会感到很幸福……
+
+        我不知道我们以后会怎么发展，不知道你我会去哪座城市，但是我想你一直和我在一起，和你一起感受四季，感受生活。我想和你有很长的未来，希望你不要放弃我。
+        感谢你抽出了两分钟来阅读我的告白，也许我的文笔并不好，但我想说，我希望你可以在我的身边，比起无法预测的未来，我更在意 有你的明天！
+        
+        我爱你                                                                         
+                                                                                        王麒睿
+                                                                                        2026年11月20日</pre>
+    </div>
+
+    <script>
+        function checkAnswer() {
+            const userAnswer = document.getElementById('answer').value.trim();
+            const correctAnswer = 'zr'; // 这里填正确答案
+            if (userAnswer === correctAnswer) {
+                document.getElementById('quiz').style.display = 'none';
+                document.getElementById('content').style.display = 'block';
+            } else {
+                document.getElementById('error').textContent = '答案不对，请重试。';
+            }
+        }
+    </script>
+</body>
+</html>
